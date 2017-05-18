@@ -15,4 +15,6 @@ mkmf.log
 mb.log
 mb.pid
 tags
+.ruby-version
+.ruby-gemset
 .idea/
