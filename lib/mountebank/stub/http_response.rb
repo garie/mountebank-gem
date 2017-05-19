@@ -4,7 +4,7 @@ class Mountebank::Stub::HttpResponse < Mountebank::Stub::Response
     payload[:statusCode] = statusCode
     payload[:headers] = headers unless headers.empty?
     payload[:body] = body unless body.empty?
-    payload[:_mode] = mode unless mode.empty?
+    payload[:_mode] = mode if (mode == 'text' or mode == 'binary')
 
     data = {is: payload}
     data.merge!(_behaviors: behaviors) unless behaviors.empty?

@@ -22,6 +22,14 @@ RSpec.describe Mountebank::Stub::HttpResponse do
       end
     end
 
+    context 'invalid binary mode' do
+        let(:mode) { 'random' }
+        it 'returns response object without binary mode' do
+          expect(response).to be_a Mountebank::Stub::HttpResponse
+          expect(response.to_json).to eq '{"is":{"statusCode":200,"headers":{"Content-Type":"application/json"},"body":"{\"foo\":\"bar\"}"}}'
+        end
+    end
+
     context 'with behaviors' do
         let(:behaviors) { { wait: 10000 } }
       it 'returns a response object' do
