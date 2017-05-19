@@ -1,5 +1,5 @@
 class Mountebank::Stub::HttpResponse < Mountebank::Stub::Response
-  def self.create(statusCode=200, headers={}, body='', behaviors: {}, mode: '')
+  def self.create(statusCode=200, headers={}, body='', behaviors={}, mode='')
     payload = {}
     payload[:statusCode] = statusCode
     payload[:headers] = headers unless headers.empty?

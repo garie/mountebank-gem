@@ -6,7 +6,7 @@ RSpec.describe Mountebank::Stub::HttpResponse do
   let(:body) { {foo:"bar"}.to_json }
   let(:behaviors) { {} }
   let(:mode) { '' }
-  let!(:response) { Mountebank::Stub::HttpResponse.create(statusCode, headers, body, behaviors: behaviors, mode: mode) }
+  let!(:response) { Mountebank::Stub::HttpResponse.create(statusCode, headers, body, behaviors, mode) }
 
   describe '.create' do
     it 'returns response object' do
